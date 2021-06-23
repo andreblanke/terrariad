@@ -1,0 +1,13 @@
+[Unit]
+Description=Terraria server daemon
+After=network.target
+
+[Service]
+Type=simple
+Environment=TSHOCK_SERVICE_DIRECTORY=/srv/tshock
+WorkingDirectory=${TSHOCK_SERVICE_DIRECTORY}
+ExecStart=mono "${TSHOCK_SERVICE_DIRECTORY}/TerrariaServer.exe -config serverconfig.txt"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
