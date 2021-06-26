@@ -39,10 +39,13 @@ attempt, as we cannot send arbitrary messages to inform them that a startup is i
 
 - Python 3. The script was tested on Python 3.9 only but previous versions should work as well.
 
-Simply copy [`terrariad.py`](terrariad.py) somewhere and execute it. See below for usage examples.
-You might want to automatically start the script on boot. The way this is done is operating system
-dependent. An example systemd [service file](terrariad.service) is provided. Only the `ExecStart`,
-`WorkingDirectory`, and `Environment` values should need to be edited.
+A [PKGBUILD](PKGBUILD) file is provided for installation on Arch Linux-based distributions.
+Otherwise [terrariad.py](terrariad.py) can simply be downloaded and executed. See below for usage
+examples.
+
+You might want to automatically start the script on boot. An example systemd
+[service file](terrariad.service) to do this on some Linux systems is provided.
+Only the `ExecStart`, `WorkingDirectory`, and `Environment` values should need to be edited.
 
 ## Usage
 
