@@ -41,8 +41,8 @@ attempt, as we cannot send arbitrary messages to inform them that a startup is i
 
 Simply copy [`terrariad.py`](terrariad.py) somewhere and execute it. See below for usage examples.
 You might want to automatically start the script on boot. The way this is done is operating system
-dependent. An example systemd [service file](terrariad.service) is provided. Only the `ExecStart`
-and `WorkingDirectory` values should need to be edited.
+dependent. An example systemd [service file](terrariad.service) is provided. Only the `ExecStart`,
+`WorkingDirectory`, and `Environment` values should need to be edited.
 
 ## Usage
 

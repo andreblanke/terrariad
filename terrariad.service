@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 Environment=TSHOCK_SERVICE_DIRECTORY=/srv/tshock
 WorkingDirectory=${TSHOCK_SERVICE_DIRECTORY}
-ExecStart=mono "${TSHOCK_SERVICE_DIRECTORY}/TerrariaServer.exe -config serverconfig.txt"
+ExecStart=${TSHOCK_SERVICE_DIRECTORY}/start-server.sh
 Restart=on-failure
 
 [Install]
