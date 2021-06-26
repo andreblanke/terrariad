@@ -33,7 +33,61 @@ get the server to accept a socket passed by systemd. However, we would still be 
 that the server startup might be too slow and players would end up cancelling the connection
 attempt, as we cannot send arbitrary messages to inform them that a startup is in progress.
 
+## Installation
+
+### Prerequisites
+
+- Python 3. The script was tested on Python 3.9 only but previous versions should work as well.
+
+Simply copy [`terrariad.py`](terrariad.py) somewhere and execute it. See below for usage examples.
+You might want to automatically start the script on boot. The way this is done is operating system
+dependent. An example systemd [service file](terrariad.service) is provided. Only the `ExecStart`
+and `WorkingDirectory` values should need to be edited.
+
 ## Usage
+
+```
+usage: terrariad.py [-h] [-H HOST] [-p PORT] -e EXEC [-d WORKING_DIRECTORY] [-r REASON]
+
+Launches a Terraria daemon to start the actual server on the first connection attempt made and disconnects the client sending a configurable reason.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -H HOST, --host HOST  hostname or IP address to bind the socket to.
+                        default: empty string used to bind to all network interfaces
+  -p PORT, --port PORT  port on which to run the daemon.
+                        default: standard Terraria port 7777
+  -e EXEC, --exec EXEC  program to execute once a connection on the socket has been attempted
+  -d WORKING_DIRECTORY, --working-directory WORKING_DIRECTORY
+                        working directory from which to execute the program from -e
+                        default: current working directory
+  -r REASON, --reason REASON
+                        reason for disconnect sent to connecting Terraria client
+                          ASCII string with max length 127
+                        default: 'The server is starting. Please wait and retry connecting in a bit'
+```
+
+### Example
+
+#### Echo on connection
+
+```
+$ ./terrariad.py --exec 'echo "This would start the server"'
+```
+
+#### Executing a startup script on connection
+
+```
+$ ./terrariad.py --exec '/srv/tshock/start-server.sh'
+```
+
+#### Executing a startup script on connection, custom disconnect reason
+
+```
+$ ./terrariad.py                           \
+      --exec '/srv/tshock/start-server.sh' \
+      --reason 'Server is starting.'
+```
 
 ## See also
 
