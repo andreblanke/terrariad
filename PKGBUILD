@@ -16,4 +16,5 @@ package() {
 
     install -D --mode=755 'terrariad.py'      "$pkgdir/usr/bin/terrariad"
     install -D --mode=644 'terrariad.service' "$pkgdir/usr/lib/systemd/system/terrariad.service"
+    install -D --mode=644 'LICENSE.txt'       "$pkgdir/usr/share/licenses/terrariad/LICENSE.txt"
 }
