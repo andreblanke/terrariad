@@ -4,9 +4,8 @@ After=network.target
 
 [Service]
 Type=simple
-Environment=TSHOCK_SERVICE_DIRECTORY=/srv/tshock
-WorkingDirectory=${TSHOCK_SERVICE_DIRECTORY}
-ExecStart=${TSHOCK_SERVICE_DIRECTORY}/start-server.sh
+WorkingDirectory=/srv/tshock
+ExecStart=/usr/bin/terrariad --exec '/srv/tshock/start-server.sh'
 Restart=on-failure
 
 [Install]

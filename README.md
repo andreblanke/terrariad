@@ -44,8 +44,8 @@ Otherwise [terrariad.py](terrariad.py) can simply be downloaded and executed. Se
 examples.
 
 You might want to automatically start the script on boot. An example systemd
-[service file](terrariad.service) to do this on some Linux systems is provided.
-Only the `ExecStart`, `WorkingDirectory`, and `Environment` values should need to be edited.
+[service file](terrariad.service) to do this on some Linux systems is provided. Only the
+`ExecStart` and `WorkingDirectory` values should need to be edited.
 
 ## Usage
 
