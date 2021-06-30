@@ -41,11 +41,12 @@ attempt, as we cannot send arbitrary messages to inform them that a startup is i
 
 A [PKGBUILD](PKGBUILD) file is provided for installation on Arch Linux-based distributions.
 Otherwise [terrariad.py](terrariad.py) can simply be downloaded and executed. See below for usage
-examples.
+examples. Please note that the PKGBUILD installs the latest release rather than the current state
+of the master branch.
 
 You might want to automatically start the script on boot. An example systemd
-[service file](terrariad.service) to do this on some Linux systems is provided.
-Only the `ExecStart`, `WorkingDirectory`, and `Environment` values should need to be edited.
+[service file](terrariad.service) to do this on some Linux systems is provided. Only the
+`ExecStart` and `WorkingDirectory` values should need to be edited.
 
 ## Usage
 

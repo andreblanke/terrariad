@@ -1,7 +1,7 @@
 # Maintainer: Andre Blanke
 
 pkgname='terrariad'
-pkgver='1.0.0'
+pkgver='1.0.1'
 pkgrel=1
 pkgdesc='Terraria server daemon providing socket activation'
 arch=('any')
@@ -9,7 +9,7 @@ url='https://github.com/andreblanke/terrariad'
 license=('MIT')
 depends=('python')
 source=("https://github.com/andreblanke/$pkgname/archive/refs/tags/v$pkgver.zip")
-sha256sums=('1ff491f5dcf62a6931202a3375713a07798547c6d1dd5d6a2453ec8c01a586e1')
+sha256sums=('2c509d6c2b76e2985eba63e7da09c0312b73fcc7783edb991b7862e0bdfe2f37')
 
 package() {
     cd "$pkgname-$pkgver"
